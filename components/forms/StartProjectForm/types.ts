@@ -13,8 +13,8 @@ export type TechnologyFormValues = z.infer<typeof technologyLeadSchema>;
 // fields relevant to the selected `division` are validated at submit time
 // (via the Zod discriminated union), but registering every possible field
 // on one form keeps the step components simple.
-export type StartProjectFormValues = Partial<WebsiteFormValues> &
-  Partial<BrandingFormValues> &
-  Partial<TechnologyFormValues> & {
+export type StartProjectFormValues = Partial<Omit<WebsiteFormValues, "division">> &
+  Partial<Omit<BrandingFormValues, "division">> &
+  Partial<Omit<TechnologyFormValues, "division">> & {
     division?: "website" | "branding" | "technology";
   };
