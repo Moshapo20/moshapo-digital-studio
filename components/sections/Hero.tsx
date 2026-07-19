@@ -1,0 +1,44 @@
+import Image from "next/image";
+import { Section } from "@/components/layout/Section";
+import { Button } from "@/components/ui/Button";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { company } from "@/content/company";
+
+export function Hero() {
+  return (
+    <Section bg="black" diagonal="corner" className="pt-28 pb-20 md:pt-36 md:pb-28">
+      <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <Eyebrow>Brand · Digital Experiences · Technology</Eyebrow>
+          <h1 className="font-display mt-5 text-4xl font-bold leading-[1.05] text-white md:text-6xl">
+            {company.tagline}
+          </h1>
+          <p className="mt-6 max-w-xl text-base text-text-soft md:text-lg">
+            Moshapo Digital Studio helps ambitious businesses establish a powerful brand, build a
+            professional digital presence, and create technology that makes their business work
+            better.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <Button href="/start-a-project" variant="gold">
+              Start a Project
+            </Button>
+            <Button href="/work" variant="outline-light">
+              Explore Our Work
+            </Button>
+          </div>
+        </div>
+
+        <div className="hidden justify-center md:flex">
+          <Image
+            src="/logo/logo_icon.png"
+            alt=""
+            width={220}
+            height={160}
+            className="h-40 w-auto opacity-90"
+            priority
+          />
+        </div>
+      </div>
+    </Section>
+  );
+}

@@ -1,0 +1,62 @@
+import type { Metadata } from "next";
+import { Section } from "@/components/layout/Section";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { ContactForm } from "@/components/forms/ContactForm";
+import { company } from "@/content/company";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Get in touch with ${company.name}.`,
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <Section bg="black" diagonal="corner" className="pt-16 pb-14 md:pt-20">
+        <Eyebrow>Get In Touch</Eyebrow>
+        <h1 className="font-display mt-4 text-4xl font-bold text-white md:text-5xl">
+          Let&apos;s talk.
+        </h1>
+        <p className="mt-4 max-w-xl text-text-soft">
+          Have a quick question, or prefer not to fill out the full project form? Send us a
+          message here.
+        </p>
+      </Section>
+
+      <Section bg="white">
+        <div className="grid gap-16 md:grid-cols-[1.3fr_1fr]">
+          <ContactForm />
+
+          <div className="space-y-8 bg-black p-8 text-white">
+            <div>
+              <Eyebrow>Response Time</Eyebrow>
+              <p className="mt-2 text-sm text-text-soft">
+                We reply to every inquiry within 1–2 business days.
+              </p>
+            </div>
+            <div>
+              <Eyebrow>Prefer Email?</Eyebrow>
+              <p className="mt-2 text-sm text-text-soft">{company.email}</p>
+            </div>
+            <div>
+              <Eyebrow>WhatsApp</Eyebrow>
+              <p className="mt-2 text-sm text-text-soft">{company.whatsapp.display}</p>
+              <WhatsAppButton className="mt-3" variant="inline">
+                Message on WhatsApp
+              </WhatsAppButton>
+            </div>
+            <div>
+              <Eyebrow>Based In</Eyebrow>
+              <p className="mt-2 text-sm text-text-soft">
+                {company.location}
+                <br />
+                Working with clients worldwide
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}

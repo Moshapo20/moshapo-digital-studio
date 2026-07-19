@@ -1,0 +1,31 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
+import { conceptLabel, type PortfolioProject } from "@/content/portfolio";
+
+export function PortfolioCard({ project }: { project: PortfolioProject }) {
+  const image = project.gallery[0];
+
+  return (
+    <Link href={`/work/${project.slug}`} className="block h-full">
+      <Card variant="portfolio" className="h-full">
+        {image?.src ? (
+          <div className="relative aspect-[4/3] w-full">
+            <Image src={image.src} alt={image.alt} fill className="object-cover" />
+          </div>
+        ) : (
+          <PlaceholderArt seed={project.slug} label={image?.alt ?? project.title} />
+        )}
+        <div className="p-6">
+          <Badge variant={project.type === "concept" ? "concept" : "client"}>
+            {project.type === "concept" ? conceptLabel() : "Client Project"}
+          </Badge>
+          <h3 className="font-display mt-3 text-lg font-bold text-black">{project.title}</h3>
+          <p className="mt-1 text-sm text-black/60">{project.industry}</p>
+        </div>
+      </Card>
+    </Link>
+  );
+}
