@@ -10,7 +10,8 @@ export function Hero() {
       <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <Eyebrow>Brand · Digital Experiences · Technology</Eyebrow>
-          <h1 className="font-display mt-5 text-4xl font-bold leading-[1.05] text-white md:text-6xl">
+          <span className="mt-3 block h-px w-16 bg-gold" />
+          <h1 className="font-display mt-5 uppercase leading-[1.05] tracking-tight text-white text-4xl md:text-6xl">
             {company.tagline}
           </h1>
           <p className="mt-6 max-w-xl text-base text-text-soft md:text-lg">
@@ -32,7 +33,7 @@ export function Hero() {
           <Image
             src="/logo/logo_icon.png"
             alt=""
-            width={220}
+            width={171}
             height={160}
             className="h-40 w-auto opacity-90"
             priority

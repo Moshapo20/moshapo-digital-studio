@@ -8,14 +8,15 @@ export function ServiceDivisions() {
   return (
     <Section bg="dark-gray">
       <Eyebrow>What We Do</Eyebrow>
-      <h2 className="font-display mt-4 max-w-xl text-3xl font-bold text-white md:text-4xl">
+      <h2 className="font-display mt-4 max-w-xl uppercase text-3xl text-white md:text-4xl">
         Three ways we move your business forward.
       </h2>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {serviceDivisions.map((division) => (
+        {serviceDivisions.map((division, i) => (
           <Card key={division.id} variant="division">
-            <h3 className="font-display text-xl font-bold text-white">{division.headline}</h3>
+            <span className="font-display text-sm text-gold">{String(i + 1).padStart(2, "0")}</span>
+            <h3 className="font-display mt-3 uppercase text-xl text-white">{division.headline}</h3>
             <p className="mt-3 flex-1 text-sm text-text-soft">{division.description}</p>
             <Link
               href={`/services/${division.slug}`}

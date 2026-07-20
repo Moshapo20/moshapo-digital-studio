@@ -12,9 +12,9 @@ function hashSeed(seed: string) {
 type PlaceholderVariant = "dark" | "light" | "gold-accent";
 
 const backgroundByVariant: Record<PlaceholderVariant, string> = {
-  dark: "#0D0D0D",
-  light: "#F5F5F5",
-  "gold-accent": "#1A1A1A",
+  dark: "#0B1E33",
+  light: "#F3E8D2",
+  "gold-accent": "#14304D",
 };
 
 /**

@@ -10,19 +10,28 @@ export function PortfolioCard({ project }: { project: PortfolioProject }) {
 
   return (
     <Link href={`/work/${project.slug}`} className="block h-full">
-      <Card variant="portfolio" className="h-full">
-        {image?.src ? (
-          <div className="relative aspect-[4/3] w-full">
-            <Image src={image.src} alt={image.alt} fill className="object-cover" />
-          </div>
-        ) : (
-          <PlaceholderArt seed={project.slug} label={image?.alt ?? project.title} />
-        )}
+      <Card variant="portfolio" className="group h-full overflow-hidden">
+        <div className="overflow-hidden">
+          {image?.src ? (
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          ) : (
+            <div className="transition-transform duration-300 group-hover:scale-105">
+              <PlaceholderArt seed={project.slug} label={image?.alt ?? project.title} />
+            </div>
+          )}
+        </div>
         <div className="p-6">
           <Badge variant={project.type === "concept" ? "concept" : "client"}>
             {project.type === "concept" ? conceptLabel() : "Client Project"}
           </Badge>
-          <h3 className="font-display mt-3 text-lg font-bold text-black">{project.title}</h3>
+          <h3 className="font-display mt-3 uppercase text-lg text-black">{project.title}</h3>
           <p className="mt-1 text-sm text-black/60">{project.industry}</p>
         </div>
       </Card>
