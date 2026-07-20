@@ -3,11 +3,13 @@ import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { InsightCard } from "@/components/ui/InsightCard";
 import { insightPosts } from "@/content/insights";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Insights",
   description: "Thinking on brand, web design, and technology for South African businesses.",
-};
+  path: "/insights",
+});
 
 export default function InsightsPage() {
   return (

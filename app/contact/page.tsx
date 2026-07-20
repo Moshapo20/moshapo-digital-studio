@@ -4,11 +4,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/content/company";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: `Get in touch with ${company.name}.`,
-};
+  description: `Get in touch with ${company.name} to discuss your brand, website, or technology project.`,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

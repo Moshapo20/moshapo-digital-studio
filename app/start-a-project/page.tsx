@@ -3,11 +3,13 @@ import { Suspense } from "react";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { StartProjectForm } from "@/components/forms/StartProjectForm/StartProjectForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Start a Project",
   description: "Tell us about your project and we'll get back to you with next steps.",
-};
+  path: "/start-a-project",
+});
 
 export default function StartAProjectPage() {
   return (

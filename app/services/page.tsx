@@ -5,12 +5,14 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Card } from "@/components/ui/Card";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { serviceDivisions } from "@/content/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
     "Brand & Creative, Websites & Digital Experiences, and Technology & Digital Solutions from Moshapo Digital Studio.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

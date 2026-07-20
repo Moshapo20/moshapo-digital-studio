@@ -4,7 +4,10 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { conceptLabel, portfolioProjects } from "@/content/portfolio";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
+import { company } from "@/content/company";
 
 export function generateStaticParams() {
   return portfolioProjects.map((p) => ({ slug: p.slug }));
@@ -22,7 +25,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.description };
+  return pageMetadata({
+    title: project.title,
+    description: project.description,
+    path: `/work/${project.slug}`,
+  });
 }
 
 export default async function WorkDetailPage({
@@ -34,8 +41,20 @@ export default async function WorkDetailPage({
   const project = getProject(slug);
   if (!project) notFound();
 
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: absoluteUrl(`/work/${project.slug}`),
+    creator: { "@type": "Organization", name: company.name },
+    about: project.industry,
+    keywords: project.servicesProvided.join(", "),
+  };
+
   return (
     <>
+      <JsonLd data={creativeWorkJsonLd} />
       <Section bg="black" diagonal="corner" className="pt-16 pb-12 md:pt-20">
         <Badge variant={project.type === "concept" ? "concept" : "client"}>
           {project.type === "concept" ? conceptLabel() : "Client Project"}

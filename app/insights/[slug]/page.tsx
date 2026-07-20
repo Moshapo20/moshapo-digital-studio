@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { insightPosts } from "@/content/insights";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
+import { company } from "@/content/company";
 
 export function generateStaticParams() {
   return insightPosts.map((p) => ({ slug: p.slug }));
@@ -21,7 +24,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  return { title: post.seo.metaTitle, description: post.seo.metaDescription };
+  return pageMetadata({
+    title: post.seo.metaTitle,
+    description: post.seo.metaDescription,
+    path: `/insights/${post.slug}`,
+  });
 }
 
 export default async function InsightDetailPage({
@@ -33,8 +40,20 @@ export default async function InsightDetailPage({
   const post = getPost(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.seo.metaDescription,
+    url: absoluteUrl(`/insights/${post.slug}`),
+    datePublished: post.publishedAt,
+    author: { "@type": "Person", name: post.author },
+    publisher: { "@type": "Organization", name: company.name },
+  };
+
   return (
     <Section bg="white" className="pt-16 md:pt-20">
+      <JsonLd data={articleJsonLd} />
       <Eyebrow>{post.category}</Eyebrow>
       <h1 className="font-display mt-4 max-w-2xl text-3xl font-bold text-black md:text-4xl">
         {post.title}

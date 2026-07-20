@@ -5,12 +5,14 @@ import { PackageCard } from "@/components/ui/PackageCard";
 import { EveryWebsiteIncludes } from "@/components/sections/EveryWebsiteIncludes";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { packages, packagesFootnote } from "@/content/packages";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Website Packages",
   description:
     "Clear, fixed-price website packages from Moshapo Digital Studio — Landing Page, Starter, Growth, and Premium.",
-};
+  path: "/packages",
+});
 
 export default function PackagesPage() {
   return (

@@ -4,11 +4,13 @@ import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { company } from "@/content/company";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
-  description: `${company.founder}, ${company.founderTitle} of ${company.name}.`,
-};
+  description: `${company.founder}, ${company.founderTitle} of ${company.name} — building brands, websites, and technology for South African businesses.`,
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -28,7 +30,7 @@ export default function AboutPage() {
               src="/logo/logo_icon.png"
               alt={company.name}
               width={160}
-              height={116}
+              height={149}
               className="h-auto w-32"
             />
           </div>

@@ -4,11 +4,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PortfolioCard } from "@/components/ui/PortfolioCard";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { portfolioProjects } from "@/content/portfolio";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
   description: "Brand, website, and technology projects from Moshapo Digital Studio.",
-};
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (
