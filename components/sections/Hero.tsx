@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { HeroVideo } from "@/components/ui/HeroVideo";
 
 export function Hero() {
   return (
@@ -28,17 +28,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:block">
-          <div className="relative aspect-[4/5] w-full overflow-hidden">
-            <Image
-              src="/images/hero.jpg"
-              alt="A glowing muted-gold ring on a black background"
-              fill
-              sizes="(min-width: 768px) 45vw, 0px"
-              className="object-cover"
-              priority
-            />
-          </div>
+        <div>
+          <HeroVideo />
         </div>
       </div>
     </Section>
