@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const POSTER = "/images/hero.jpg";
-const POSTER_ALT = "Moshapo Digital Studio brand mark, a glowing gold ring on black";
+const POSTER = "/images/hero-video-frame.jpg";
+const POSTER_ALT = "Still frame from the Moshapo Digital Studio symbol-forming animation";
 
 /**
  * Full-bleed decorative hero background, meant to sit behind the hero text
