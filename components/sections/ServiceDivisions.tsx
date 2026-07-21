@@ -9,7 +9,7 @@ export function ServiceDivisions() {
     <Section bg="dark-gray">
       <Eyebrow>What We Do</Eyebrow>
       <h2 className="font-display mt-4 max-w-xl uppercase text-3xl text-white md:text-4xl">
-        Three ways we move your business forward.
+        It starts with your website.
       </h2>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">

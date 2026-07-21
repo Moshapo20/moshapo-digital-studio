@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Brand & Creative, Websites & Digital Experiences, and Technology & Digital Solutions from Moshapo Digital Studio.",
+    "Website design, brand and graphic design, and technology solutions from Moshapo Digital Studio.",
   path: "/services",
 });
 
@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <Section bg="black" diagonal="corner" className="pt-16 pb-14 md:pt-20">
         <Eyebrow>What We Do</Eyebrow>
         <h1 className="font-display mt-4 text-4xl font-bold text-white md:text-5xl">
-          Brand. Digital Presence. Technology.
+          Websites first. Brand and tech to match.
         </h1>
       </Section>
 

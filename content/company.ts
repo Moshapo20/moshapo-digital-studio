@@ -3,7 +3,7 @@ export const company = {
   founder: "Marope Moshapo",
   founderTitle: "Founder & Creative Director",
   tagline:
-    "We build brands, digital experiences, and technology that move businesses forward.",
+    "Professional websites, branding, and digital tools for South African businesses.",
   domain: "moshapodigitalstudio.co.za",
   email: "moshapomarope500@gmail.com",
   whatsapp: {
