@@ -5,7 +5,8 @@ export const company = {
   tagline:
     "Professional websites, branding, and digital tools for South African businesses.",
   domain: "moshapodigitalstudio.co.za",
-  email: "moshapomarope500@gmail.com",
+  email: "hello@moshapodigitalstudio.co.za",
+  responseTime: "We usually reply within a few hours — same day at the latest.",
   whatsapp: {
     number: "0680083342",
     international: "27680083342",

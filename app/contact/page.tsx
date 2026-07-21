@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { ClockIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "@/components/ui/icons";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/content/company";
 import { pageMetadata } from "@/lib/seo";
@@ -31,30 +32,45 @@ export default function ContactPage() {
           <ContactForm />
 
           <div className="space-y-8 bg-black p-8 text-white">
-            <div>
-              <Eyebrow>Response Time</Eyebrow>
-              <p className="mt-2 text-sm text-text-soft">
-                We reply to every inquiry within 1–2 business days.
-              </p>
+            <div className="flex gap-4">
+              <ClockIcon className="mt-0.5 shrink-0 text-gold" />
+              <div>
+                <Eyebrow>Fast Reply</Eyebrow>
+                <p className="mt-2 text-sm text-text-soft">{company.responseTime}</p>
+              </div>
             </div>
-            <div>
-              <Eyebrow>Prefer Email?</Eyebrow>
-              <p className="mt-2 text-sm text-text-soft">{company.email}</p>
+            <div className="flex gap-4">
+              <MailIcon className="mt-0.5 shrink-0 text-gold" />
+              <div>
+                <Eyebrow>Email</Eyebrow>
+                <a
+                  href={`mailto:${company.email}`}
+                  className="mt-2 block text-sm text-text-soft hover:text-gold"
+                >
+                  {company.email}
+                </a>
+              </div>
             </div>
-            <div>
-              <Eyebrow>WhatsApp</Eyebrow>
-              <p className="mt-2 text-sm text-text-soft">{company.whatsapp.display}</p>
-              <WhatsAppButton className="mt-3" variant="inline">
-                Message on WhatsApp
-              </WhatsAppButton>
+            <div className="flex gap-4">
+              <WhatsAppIcon className="mt-0.5 shrink-0 text-gold" />
+              <div>
+                <Eyebrow>WhatsApp</Eyebrow>
+                <p className="mt-2 text-sm text-text-soft">{company.whatsapp.display}</p>
+                <WhatsAppButton className="mt-3" variant="inline">
+                  Message on WhatsApp
+                </WhatsAppButton>
+              </div>
             </div>
-            <div>
-              <Eyebrow>Based In</Eyebrow>
-              <p className="mt-2 text-sm text-text-soft">
-                {company.location}
-                <br />
-                Working with clients worldwide
-              </p>
+            <div className="flex gap-4">
+              <MapPinIcon className="mt-0.5 shrink-0 text-gold" />
+              <div>
+                <Eyebrow>Based In</Eyebrow>
+                <p className="mt-2 text-sm text-text-soft">
+                  {company.location}
+                  <br />
+                  Working with clients worldwide
+                </p>
+              </div>
             </div>
           </div>
         </div>

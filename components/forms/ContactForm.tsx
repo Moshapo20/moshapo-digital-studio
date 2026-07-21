@@ -40,7 +40,7 @@ export function ContactForm() {
       <div className="border border-gold bg-light-gray p-8">
         <p className="font-display text-lg font-bold text-black">Thank you.</p>
         <p className="mt-2 text-sm text-black/70">
-          Your message has been received. We&apos;ll get back to you within 1–2 business days.
+          Your message has been received. We reply fast — usually within a few hours.
         </p>
       </div>
     );

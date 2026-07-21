@@ -46,7 +46,7 @@ export const serviceDivisions: ServiceDivision[] = [
     description:
       "Logos, full brand identities, and all the everyday design that comes after — business cards, social posts, flyers, the lot. The point is simple: wherever someone runs into your business, it should look like the same sorted operation.",
     cta: "Explore Brand & Creative",
-    hasFixedPricing: false,
+    hasFixedPricing: true,
     image: "/images/service-brand-creative.jpg",
     imageAlt: "Black envelope, a blank white card and a silver pen on a black surface",
     services: [

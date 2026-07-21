@@ -9,7 +9,8 @@ export function FinalCtaBand() {
         Got a project in mind?
       </h2>
       <p className="mx-auto mt-4 max-w-lg text-text-soft">
-        Tell us what you need and we&apos;ll reply within 1–2 business days.
+        Tell us what you need. You&apos;re dealing with us directly, so replies are fast —
+        usually within a few hours.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Button href="/start-a-project" variant="gold">

@@ -6,6 +6,7 @@ import { PackagesTeaser } from "@/components/sections/PackagesTeaser";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { WhyMoshapo } from "@/components/sections/WhyMoshapo";
 import { InsightsTeaser } from "@/components/sections/InsightsTeaser";
+import { FAQ } from "@/components/sections/FAQ";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <PackagesTeaser />
       <HowWeWork />
       <WhyMoshapo />
+      <FAQ />
       <InsightsTeaser />
       <FinalCtaBand />
     </>

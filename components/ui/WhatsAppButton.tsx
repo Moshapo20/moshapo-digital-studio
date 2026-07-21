@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "@/components/ui/icons";
 
 const styles = cva("inline-flex items-center gap-2 font-display text-sm font-semibold uppercase tracking-wide transition-colors", {
   variants: {
@@ -32,6 +33,7 @@ export function WhatsAppButton({
       className={cn(styles({ variant }), className)}
       aria-label="Chat with Moshapo Digital Studio on WhatsApp"
     >
+      <WhatsAppIcon />
       {children}
     </a>
   );
