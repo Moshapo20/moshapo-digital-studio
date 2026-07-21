@@ -80,8 +80,10 @@ export default async function InsightDetailPage({
         </div>
       </div>
 
-      <div className="mt-8 max-w-2xl text-black/70">
-        <p>{post.body}</p>
+      <div className="mt-8 max-w-2xl space-y-5 text-black/70">
+        {post.body.split("\n\n").map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
       </div>
     </Section>
   );
