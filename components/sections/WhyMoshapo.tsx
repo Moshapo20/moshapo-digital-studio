@@ -3,16 +3,16 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const points = [
   {
-    title: "Direct access to the founder",
-    description: "You work directly with the person designing and building your project — no account managers, no handoffs.",
+    title: "No middlemen",
+    description: "No account managers, no handoffs — you deal directly with the person actually building your site.",
   },
   {
-    title: "Brand-first thinking",
-    description: "Every website or system we build starts from your brand, not a generic template.",
+    title: "It looks like you, not a template",
+    description: "We start with what makes your business different and build around that, not the other way round.",
   },
   {
-    title: "Built to grow with you",
-    description: "We design with your next stage in mind, so your site doesn't need a full rebuild every time your business grows.",
+    title: "Built for where you're headed",
+    description: "We think about where your business is going, not just where it is today, so you're not rebuilding from scratch a year from now.",
   },
 ];
 
