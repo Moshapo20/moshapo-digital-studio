@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
@@ -7,20 +8,36 @@ export function ServiceDivisionDetail({ division }: { division: ServiceDivision 
   return (
     <>
       <Section bg="black" diagonal="corner" className="pt-16 pb-14 md:pt-20">
-        <Eyebrow>{division.name}</Eyebrow>
-        <h1 className="font-display mt-4 max-w-2xl text-4xl font-bold text-white md:text-5xl">
-          {division.headline}
-        </h1>
-        <p className="mt-5 max-w-xl text-text-soft">{division.description}</p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Button href={`/start-a-project?division=${division.id}`} variant="gold">
-            Start a Project
-          </Button>
-          {!division.hasFixedPricing && (
-            <Button href={`/start-a-project?division=${division.id}`} variant="outline-light">
-              Custom Solutions — Request a Consultation
-            </Button>
-          )}
+        <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <Eyebrow>{division.name}</Eyebrow>
+            <h1 className="font-display mt-4 max-w-2xl uppercase text-4xl text-white md:text-5xl">
+              {division.headline}
+            </h1>
+            <p className="mt-5 max-w-xl text-text-soft">{division.description}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href={`/start-a-project?division=${division.id}`} variant="gold">
+                Start a Project
+              </Button>
+              {!division.hasFixedPricing && (
+                <Button href={`/start-a-project?division=${division.id}`} variant="outline-light">
+                  Custom Solutions — Request a Consultation
+                </Button>
+              )}
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <Image
+                src={division.image}
+                alt={division.imageAlt}
+                fill
+                sizes="(min-width: 768px) 45vw, 0px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </Section>
 

@@ -47,7 +47,12 @@ export const portfolioProjects: PortfolioProject[] = [
       "Explored a restrained navy-and-sand palette paired with a confident wordmark, then translated the system into a 5-page website structure.",
     solution:
       "A cohesive brand system and homepage layout showing how Moshapo Digital Studio approaches identity-led website design.",
-    gallery: [{ alt: "Coastal Consulting Co. concept brand and website mockup" }],
+    gallery: [
+      {
+        src: "/images/work-coastal-consulting-co.jpg",
+        alt: "Minimalist white concrete corridor with tall arched openings",
+      },
+    ],
     featured: true,
     division: "brand-creative",
   },
@@ -63,7 +68,12 @@ export const portfolioProjects: PortfolioProject[] = [
       "Full-bleed image grid layout with a lightweight nav and a single clear contact call to action.",
     solution:
       "A fast, image-first single-page concept site design.",
-    gallery: [{ alt: "Northline Studio concept website mockup" }],
+    gallery: [
+      {
+        src: "/images/work-northline-studio.jpg",
+        alt: "A professional DSLR camera and lens lit dramatically against black",
+      },
+    ],
     featured: true,
     division: "websites",
   },
@@ -77,7 +87,12 @@ export const portfolioProjects: PortfolioProject[] = [
       "A concept identity system for a fictional outdoor-supply wholesaler, built to feel rugged and trustworthy without leaning on cliché outdoor imagery.",
     approach:
       "A bold, utilitarian logotype and a muted earth-tone palette applied across packaging and stationery mockups.",
-    gallery: [{ alt: "Ridgeline Supply Co. concept brand identity mockup" }],
+    gallery: [
+      {
+        src: "/images/work-ridgeline-supply-co.jpg",
+        alt: "Row of well-used wooden mallets and hand tools on a dark workbench",
+      },
+    ],
     featured: true,
     division: "brand-creative",
   },
@@ -91,7 +106,12 @@ export const portfolioProjects: PortfolioProject[] = [
       "A concept brand-and-website pairing for a fictional boutique law firm, aimed at feeling established and precise.",
     approach:
       "A serif-accented wordmark against a strict grid layout to signal formality and attention to detail.",
-    gallery: [{ alt: "Hallmark & Co. concept brand and website mockup" }],
+    gallery: [
+      {
+        src: "/images/work-hallmark-and-co.jpg",
+        alt: "Rows of tall white columns in a modern minimalist building interior",
+      },
+    ],
     featured: false,
     division: "websites",
   },

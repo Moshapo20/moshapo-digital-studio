@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
@@ -70,9 +71,22 @@ export default async function WorkDetailPage({
 
       <Section bg="white">
         <div className="grid gap-4 md:grid-cols-2">
-          {project.gallery.map((image, i) => (
-            <PlaceholderArt key={i} seed={`${project.slug}-${i}`} label={image.alt} />
-          ))}
+          {project.gallery.map((image, i) =>
+            image.src ? (
+              <div key={i} className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                  priority={i === 0}
+                />
+              </div>
+            ) : (
+              <PlaceholderArt key={i} seed={`${project.slug}-${i}`} label={image.alt} />
+            )
+          )}
         </div>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3">

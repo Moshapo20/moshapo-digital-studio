@@ -7,6 +7,8 @@ export type InsightPost = {
   author: string;
   publishedAt: string;
   readingTimeMinutes: number;
+  coverImage: string;
+  coverAlt: string;
   seo: { metaTitle: string; metaDescription: string };
 };
 
@@ -21,6 +23,8 @@ export const insightPosts: InsightPost[] = [
     author: "Marope Moshapo",
     publishedAt: "2026-07-01",
     readingTimeMinutes: 4,
+    coverImage: "/images/insight-professional-website.jpg",
+    coverAlt: "An open laptop resting on dark fabric with space to write",
     seo: {
       metaTitle: "Why Every Small Business Needs a Professional Website",
       metaDescription:
@@ -36,6 +40,8 @@ export const insightPosts: InsightPost[] = [
     author: "Marope Moshapo",
     publishedAt: "2026-07-01",
     readingTimeMinutes: 5,
+    coverImage: "/images/insight-website-cost.jpg",
+    coverAlt: "A notebook, calculator and productivity planner laid out on a black table",
     seo: {
       metaTitle: "How Much Does a Website Cost in South Africa?",
       metaDescription:
@@ -51,6 +57,8 @@ export const insightPosts: InsightPost[] = [
     author: "Marope Moshapo",
     publishedAt: "2026-07-01",
     readingTimeMinutes: 4,
+    coverImage: "/images/insight-brand-identity.jpg",
+    coverAlt: "Blank business cards and a gold-banded pencil on a dark desk",
     seo: {
       metaTitle: "Why Your Business Needs a Strong Brand Identity",
       metaDescription: "What a real brand identity system includes, and why consistency builds customer trust.",
@@ -65,6 +73,8 @@ export const insightPosts: InsightPost[] = [
     author: "Marope Moshapo",
     publishedAt: "2026-07-01",
     readingTimeMinutes: 4,
+    coverImage: "/images/insight-website-vs-social.jpg",
+    coverAlt: "A hand holding a smartphone with a blank screen above a laptop keyboard",
     seo: {
       metaTitle: "Website vs Social Media: Why Businesses Need Both",
       metaDescription: "Understanding the different roles a website and social media play for a growing business.",
@@ -79,6 +89,8 @@ export const insightPosts: InsightPost[] = [
     author: "Marope Moshapo",
     publishedAt: "2026-07-01",
     readingTimeMinutes: 5,
+    coverImage: "/images/insight-digital-systems.jpg",
+    coverAlt: "A monitor showing code beside a laptop and mechanical keyboard on a dark desk",
     seo: {
       metaTitle: "How Digital Systems Can Save Small Businesses Time",
       metaDescription:

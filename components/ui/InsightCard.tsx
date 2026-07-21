@@ -1,13 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card } from "@/components/ui/Card";
-import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
 import type { InsightPost } from "@/content/insights";
 
 export function InsightCard({ post }: { post: InsightPost }) {
   return (
-    <Link href={`/insights/${post.slug}`} className="block h-full">
-      <Card variant="insight" className="h-full">
-        <PlaceholderArt seed={post.slug} label={post.title} variant="light" />
+    <Link href={`/insights/${post.slug}`} className="group block h-full">
+      <Card variant="insight" className="h-full overflow-hidden">
+        <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <Image
+            src={post.coverImage}
+            alt={post.coverAlt}
+            fill
+            sizes="(min-width: 768px) 33vw, 100vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
         <div className="p-6">
           <span className="font-display text-xs font-bold uppercase tracking-wide text-gold">
             {post.category}

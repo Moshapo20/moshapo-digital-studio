@@ -29,15 +29,17 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hidden justify-center md:flex">
-          <Image
-            src="/logo/logo_icon.png"
-            alt=""
-            width={171}
-            height={160}
-            className="h-40 w-auto opacity-90"
-            priority
-          />
+        <div className="hidden md:block">
+          <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <Image
+              src="/images/hero.jpg"
+              alt="A glowing muted-gold ring on a black background"
+              fill
+              sizes="(min-width: 768px) 45vw, 0px"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
     </Section>

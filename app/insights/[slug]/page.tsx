@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { insightPosts } from "@/content/insights";
 import { absoluteUrl, pageMetadata } from "@/lib/seo";
@@ -68,7 +68,16 @@ export default async function InsightDetailPage({
       </p>
 
       <div className="mt-8 max-w-3xl">
-        <PlaceholderArt seed={post.slug} label={post.title} variant="light" aspectRatio="16 / 9" />
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
+          <Image
+            src={post.coverImage}
+            alt={post.coverAlt}
+            fill
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
 
       <div className="mt-8 max-w-2xl text-black/70">

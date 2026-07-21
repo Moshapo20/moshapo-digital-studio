@@ -9,6 +9,8 @@ export type ServiceDivision = {
   cta: string;
   services: string[];
   hasFixedPricing: boolean;
+  image: string;
+  imageAlt: string;
 };
 
 export const serviceDivisions: ServiceDivision[] = [
@@ -21,6 +23,8 @@ export const serviceDivisions: ServiceDivision[] = [
       "From identity systems to everyday marketing materials, we create cohesive visual experiences that help businesses look credible, consistent, and distinctive.",
     cta: "Explore Brand & Creative",
     hasFixedPricing: false,
+    image: "/images/service-brand-creative.jpg",
+    imageAlt: "Black envelope, a blank white card and a silver pen on a black surface",
     services: [
       "Logo design",
       "Brand identity",
@@ -45,6 +49,8 @@ export const serviceDivisions: ServiceDivision[] = [
       "We design and develop responsive websites that help businesses establish credibility, communicate clearly, and create better experiences for their customers.",
     cta: "Explore Websites",
     hasFixedPricing: true,
+    image: "/images/service-websites.jpg",
+    imageAlt: "A laptop glowing softly in a dark, minimal setting",
     services: [
       "Landing pages",
       "Business websites",
@@ -67,6 +73,8 @@ export const serviceDivisions: ServiceDivision[] = [
       "We create digital tools, automation, dashboards, and custom solutions designed around the way businesses actually work.",
     cta: "Explore Technology",
     hasFixedPricing: false,
+    image: "/images/service-technology.jpg",
+    imageAlt: "Abstract curved gold metal mesh forming a fine geometric pattern",
     services: [
       "Custom dashboards",
       "CRM systems",

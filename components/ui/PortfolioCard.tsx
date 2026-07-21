@@ -18,6 +18,7 @@ export function PortfolioCard({ project }: { project: PortfolioProject }) {
                 src={image.src}
                 alt={image.alt}
                 fill
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
