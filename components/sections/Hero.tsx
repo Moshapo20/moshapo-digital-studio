@@ -15,12 +15,12 @@ export function Hero() {
         <Eyebrow>Websites · Branding · Technology</Eyebrow>
         <span className="mt-3 block h-px w-16 bg-gold" />
         <h1 className="font-display mt-5 uppercase leading-[1.05] tracking-tight text-white text-4xl md:text-6xl">
-          Websites that do the work. A brand to back them up.
+          We build the digital foundation of your business.
         </h1>
         <p className="mt-6 max-w-xl text-base text-text-soft md:text-lg">
-          Moshapo Digital Studio builds professional websites for South African businesses — then
-          the branding and digital tools to go with them. Start with the site you need now, and
-          add the rest as you grow.
+          Moshapo Digital Studio brings websites, branding, and technology together to help
+          businesses build a stronger digital presence — with the right solution for where they
+          are now and where they want to go.
         </p>
         <div className="mt-9 flex flex-wrap gap-4">
           <Button href="/start-a-project" variant="gold">
