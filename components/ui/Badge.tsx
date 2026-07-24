@@ -7,7 +7,7 @@ const badgeStyles = cva(
     variants: {
       variant: {
         popular: "bg-gold text-black",
-        concept: "bg-dark-gray text-white",
+        "case-study": "bg-dark-gray text-gold-bright",
         client: "bg-gold text-black",
         category: "bg-light-gray text-black",
       },
