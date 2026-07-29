@@ -12,13 +12,37 @@ import { WebsiteFields } from "./WebsiteFields";
 import { BrandingFields } from "./BrandingFields";
 import { TechnologyFields } from "./TechnologyFields";
 import { ThankYou } from "./ThankYou";
+import { graphicPackages } from "@/content/graphicPackages";
 import type { StartProjectFormValues } from "./types";
 
 type Division = "website" | "branding" | "technology";
 
+const WEBSITE_PACKAGE_IDS = ["landing", "starter", "growth", "premium"] as const;
+type WebsitePackageId = (typeof WEBSITE_PACKAGE_IDS)[number];
+
+// The `package` query param carries a website package id on website links and a
+// graphic package id on branding links. Route each to the field its own schema
+// actually validates, otherwise a graphic id lands in `websitePackage` (whose
+// enum rejects it) and the chosen package is lost from the lead.
+function initialWebsitePackage(
+  division: Division | null,
+  id: string | null
+): WebsitePackageId | undefined {
+  if (division !== "website" || !id) return undefined;
+  return (WEBSITE_PACKAGE_IDS as readonly string[]).includes(id)
+    ? (id as WebsitePackageId)
+    : undefined;
+}
+
+function initialBrandingService(division: Division | null, id: string | null) {
+  if (division !== "branding" || !id) return undefined;
+  return graphicPackages.find((pkg) => pkg.id === id)?.name;
+}
+
 export function StartProjectForm() {
   const searchParams = useSearchParams();
   const initialDivision = searchParams.get("division") as Division | null;
+  const initialPackage = searchParams.get("package");
 
   const [step, setStep] = useState<0 | 1>(initialDivision ? 1 : 0);
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">(
@@ -35,7 +59,8 @@ export function StartProjectForm() {
     resolver: zodResolver(leadSchema) as never,
     defaultValues: {
       division: initialDivision ?? undefined,
-      websitePackage: (searchParams.get("package") as StartProjectFormValues["websitePackage"]) ?? undefined,
+      websitePackage: initialWebsitePackage(initialDivision, initialPackage),
+      brandingService: initialBrandingService(initialDivision, initialPackage),
     },
   });
 
