@@ -91,7 +91,7 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Brand Identity",
     price: "R3,500",
     priceNote: "From",
-    savings: "Save from R800 against commissioning each piece individually",
+    savings: "Save from R400 against commissioning each piece individually",
     bestFor: "New or rebranding businesses that need a proper visual identity.",
     description:
       "The point where a business stops looking improvised. A logo, the rules that hold it together, and the everyday pieces you'll actually use — built as one identity instead of assembled from parts that don't quite match.",
@@ -114,7 +114,7 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Complete Brand System",
     price: "R6,500",
     priceNote: "From",
-    savings: "Save from R1,050 against commissioning each piece individually",
+    savings: "Save from R650 against commissioning each piece individually",
     bestFor: "Established businesses committing to a full brand transformation.",
     description:
       "Everything documented, every application built, nothing left to interpretation. This is the version where anyone — a printer, a new hire, another designer — can pick up your brand and apply it correctly without asking you first.",
@@ -154,7 +154,7 @@ export const eligibleDesigns = {
     "Brochure, bi-fold — counts as 2",
     "Brochure, tri-fold — counts as 3",
   ],
-  note: "Quick Design covers single-slot designs, so menus and brochures come in from Brand Boost upwards. Business cards, profile pictures, thumbnails, email signatures, logo design and brand guidelines stay standalone services — they aren't part of the package selection.",
+  note: "Quick Design covers single-slot designs, so menus and brochures come in from Brand Boost upwards. This list is exactly the Marketing & Promotional Graphics category below — everything in the other categories (business essentials and stationery, branding, print and large format, content and social) stays a standalone service and isn't part of the package selection.",
 };
 
 export type IndividualServiceGroup = {
@@ -188,20 +188,43 @@ export const individualServices: IndividualServiceGroup[] = [
       { name: "Business Card (Single-Sided)", price: "From R200" },
       { name: "Business Card (Double-Sided)", price: "From R250" },
       { name: "Email Signature", price: "From R150" },
+      { name: "Letterhead", price: "From R300" },
+      { name: "Invoice Template", price: "From R400" },
+      { name: "Quotation Template", price: "From R400" },
+      { name: "Business Presentation", price: "From R500" },
+      { name: "Company Profile", price: "From R1,500" },
     ],
   },
   {
     category: "Branding",
     items: [
-      { name: "Logo Design", price: "From R1,200" },
+      { name: "Logo Design", price: "From R800" },
+      { name: "Logo Redesign", price: "From R600" },
       { name: "Brand Guidelines", price: "From R2,000" },
     ],
   },
   {
-    category: "Other Services",
+    category: "Print & Large Format",
+    items: [
+      { name: "Banner Design", price: "From R400" },
+      { name: "Pull-Up Banner", price: "From R500" },
+      { name: "Signage Design", price: "From R500" },
+      { name: "Catalogue Design", price: "From R1,000" },
+    ],
+  },
+  {
+    category: "Content & Social",
     items: [
       { name: "Profile Picture", price: "From R150" },
+      { name: "Social Media Template", price: "From R350" },
       { name: "YouTube Thumbnail", price: "From R180" },
+      { name: "Thumbnail Package (5)", price: "From R750" },
+      { name: "Thumbnail Package (10)", price: "From R1,300" },
+      { name: "Podcast Cover", price: "From R350" },
+      {
+        name: "YouTube Channel Branding (banner, profile, 3 thumbnails)",
+        price: "From R750",
+      },
     ],
   },
 ];
