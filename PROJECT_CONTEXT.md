@@ -76,6 +76,15 @@ Routes: `/`, `/services`, `/services/{brand-creative,websites,technology}`,
 - **Supabase is used for exactly one thing:** the `leads` table capturing
   "Start a Project" form submissions (`app/api/leads/route.ts`,
   `supabase/migrations/0001_create_leads.sql`). Not used for content.
+- **The Supabase project is on the free tier, which auto-pauses after about a
+  week without database activity.** It paused once (found 29 Jul 2026) and the
+  lead form returned 500s until it was resumed from the dashboard. A paused
+  project's hostname stops resolving entirely — `getaddrinfo ENOTFOUND` on
+  `<ref>.supabase.co` means *paused*, not deleted, and the data is safe.
+  Resume it at https://supabase.com/dashboard/project/touonddpxfgazbjyknom.
+  `app/api/keep-warm/route.ts` + the `crons` entry in `vercel.json` now run a
+  trivial daily read to stop this recurring. That prevents a pause but cannot
+  undo one — if it ever pauses again, resume manually first.
 - **Start a Project form** is a 3-branch guided flow (Website / Branding /
   Technology divisions ask different questions) — Zod discriminated union +
   react-hook-form, in `components/forms/StartProjectForm/`.
