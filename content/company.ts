@@ -15,11 +15,25 @@ export const company = {
   },
   location: "South Africa",
   social: {
-    instagram: null as string | null,
-    tiktok: null as string | null,
+    // Same handle on Instagram and TikTok.
+    handle: "@moshapo_digital_studio",
+    instagram: "https://www.instagram.com/moshapo_digital_studio/" as string | null,
+    tiktok: "https://www.tiktok.com/@moshapo_digital_studio" as string | null,
     linkedin: null as string | null,
   },
 } as const;
+
+// Only profiles with a real URL get rendered — adding a LinkedIn URL above is
+// enough to make it appear everywhere social links are shown.
+export const socialLinks = (
+  [
+    { id: "instagram", label: "Instagram", href: company.social.instagram },
+    { id: "tiktok", label: "TikTok", href: company.social.tiktok },
+    { id: "linkedin", label: "LinkedIn", href: company.social.linkedin },
+  ] as const
+).filter(
+  (link): link is typeof link & { href: string } => typeof link.href === "string"
+);
 
 export const navLinks = [
   { label: "Home", href: "/" },

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { company, footerLinks } from "@/content/company";
+import { company, footerLinks, socialLinks } from "@/content/company";
+import { InstagramIcon, TikTokIcon } from "@/components/ui/icons";
 
-function SocialPlaceholder({ label }: { label: string }) {
-  return <span className="text-white/40">{label} — coming soon</span>;
-}
+const socialIcons = {
+  instagram: InstagramIcon,
+  tiktok: TikTokIcon,
+} as const;
 
 export function Footer() {
   return (
@@ -41,15 +43,23 @@ export function Footer() {
               Connect
             </h4>
             <ul className="space-y-2.5 text-sm text-white/70">
-              <li>
-                <SocialPlaceholder label="Instagram" />
-              </li>
-              <li>
-                <SocialPlaceholder label="TikTok" />
-              </li>
-              <li>
-                <SocialPlaceholder label="LinkedIn" />
-              </li>
+              {socialLinks.map((link) => {
+                const Icon = socialIcons[link.id as keyof typeof socialIcons];
+                return (
+                  <li key={link.id}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 hover:text-gold"
+                    >
+                      {Icon && <Icon width={16} height={16} className="shrink-0" />}
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
+              <li className="pt-1 text-white/40">{company.social.handle}</li>
             </ul>
           </div>
 

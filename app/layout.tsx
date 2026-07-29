@@ -5,7 +5,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { company } from "@/content/company";
+import { company, socialLinks } from "@/content/company";
 import { pageMetadata, siteUrl } from "@/lib/seo";
 
 const anton = Anton({
@@ -51,6 +51,8 @@ const organizationJsonLd = {
   telephone: `+${company.whatsapp.international}`,
   areaServed: "ZA",
   address: { "@type": "PostalAddress", addressCountry: "ZA" },
+  // Tells Google these profiles are the same business as the site.
+  ...(socialLinks.length > 0 && { sameAs: socialLinks.map((link) => link.href) }),
 };
 
 export default function RootLayout({

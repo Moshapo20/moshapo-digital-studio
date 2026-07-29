@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { ClockIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "@/components/ui/icons";
+import {
+  ClockIcon,
+  InstagramIcon,
+  MailIcon,
+  MapPinIcon,
+  WhatsAppIcon,
+} from "@/components/ui/icons";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { company } from "@/content/company";
+import { company, socialLinks } from "@/content/company";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -72,6 +78,28 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
+            {socialLinks.length > 0 && (
+              <div className="flex gap-4">
+                <InstagramIcon className="mt-0.5 shrink-0 text-gold" />
+                <div>
+                  <Eyebrow>Follow</Eyebrow>
+                  <p className="mt-2 text-sm text-text-soft">{company.social.handle}</p>
+                  <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.id}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gold hover:text-gold-bright"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Section>

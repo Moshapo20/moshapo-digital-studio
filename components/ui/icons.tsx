@@ -57,6 +57,25 @@ export function ChevronDownIcon(props: IconProps) {
   );
 }
 
+export function InstagramIcon(props: IconProps) {
+  return (
+    <svg {...base} aria-hidden="true" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function TikTokIcon(props: IconProps) {
+  // Solid glyph — the note-and-tail mark doesn't read as an outline.
+  return (
+    <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12.53 2h3.1a5.6 5.6 0 0 0 1.82 3.18 5.1 5.1 0 0 0 2.55 1.02v3.1a8.2 8.2 0 0 1-4.37-1.4v6.3a6.1 6.1 0 1 1-6.1-6.1c.32 0 .63.02.94.07v3.17a2.94 2.94 0 1 0 2.06 2.8V2Z" />
+    </svg>
+  );
+}
+
 export function CheckIcon(props: IconProps) {
   return (
     <svg {...base} aria-hidden="true" {...props}>
