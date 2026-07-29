@@ -26,13 +26,21 @@ export function ServiceDivisionDetail({ division }: { division: ServiceDivision 
               )}
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
+          <div className={division.imageOnMobile ? "" : "hidden md:block"}>
+            <div
+              className={`relative w-full overflow-hidden ${
+                division.imageAspect === "wide" ? "aspect-[4/3]" : "aspect-[4/5]"
+              }`}
+            >
               <Image
                 src={division.image}
                 alt={division.imageAlt}
                 fill
-                sizes="(min-width: 768px) 45vw, 0px"
+                sizes={
+                  division.imageOnMobile
+                    ? "(min-width: 768px) 45vw, 100vw"
+                    : "(min-width: 768px) 45vw, 0px"
+                }
                 className="object-cover"
                 priority
               />

@@ -11,6 +11,11 @@ export type ServiceDivision = {
   hasFixedPricing: boolean;
   image: string;
   imageAlt: string;
+  // Divisions default to a portrait image frame hidden on small screens. The
+  // websites division shows a landscape multi-device showcase instead, which
+  // needs a wide frame and has to stay visible on mobile.
+  imageAspect?: "wide";
+  imageOnMobile?: boolean;
 };
 
 export const serviceDivisions: ServiceDivision[] = [
@@ -23,8 +28,11 @@ export const serviceDivisions: ServiceDivision[] = [
       "This is the core of what we do. We design and build websites that look the part, work properly on every screen, and are set up to actually bring in enquiries — not just sit there.",
     cta: "Explore Websites",
     hasFixedPricing: true,
-    image: "/images/service-websites.jpg",
-    imageAlt: "A laptop glowing softly in a dark, minimal setting",
+    image: "/images/service-websites-showcase.jpg",
+    imageAlt:
+      "The Moshapo Digital Studio website shown on a desktop monitor and a laptop, alongside branded business cards and stationery",
+    imageAspect: "wide",
+    imageOnMobile: true,
     services: [
       "Landing pages",
       "Business websites",
