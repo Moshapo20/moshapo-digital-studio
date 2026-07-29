@@ -9,7 +9,7 @@ export const faqs: FAQItem[] = [
   {
     question: "How much does a website cost?",
     answer:
-      "Websites start at R1,500 for a single landing page and go up to R8,500+ for a full custom build. Graphic design starts at R350. Every price is listed upfront on the site — you'll know roughly what you're looking at before you even message.",
+      "Websites start at R1,500 for a single landing page and go up to R8,500+ for a full custom build. On the design side, individual pieces start at R150 and design packages start at R350 — packages include the source files and print-ready exports that cost extra on their own, so they work out cheaper than ordering piece by piece. Every price is listed upfront on the site, so you'll know roughly what you're looking at before you even message.",
   },
   {
     question: "Do I own my website when it's done?",

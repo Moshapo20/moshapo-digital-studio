@@ -7,6 +7,8 @@ import { CheckIcon } from "@/components/ui/icons";
 import {
   graphicPackages,
   individualServices,
+  eligibleDesigns,
+  individualServicesNudge,
   graphicPricingNotes,
 } from "@/content/graphicPackages";
 
@@ -19,8 +21,10 @@ export function GraphicPackages() {
           Design work, priced upfront.
         </h2>
         <p className="mt-4 max-w-xl text-black/60">
-          Pick a package or order individual pieces below. Everything comes back in
-          high-resolution, ready-to-use files.
+          You choose the designs. Every package includes the source files and print-ready
+          exports that cost extra on individual orders, which is what makes it cheaper than
+          ordering the same pieces one at a time. Individual services are listed below if
+          you only need one thing.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -41,6 +45,17 @@ export function GraphicPackages() {
                   <span className="mr-1 text-base font-medium">{pkg.priceNote}</span>
                 )}
                 {pkg.price}
+                {pkg.priceSuffix && (
+                  <span className="ml-1 text-base font-medium">{pkg.priceSuffix}</span>
+                )}
+              </p>
+              {pkg.savings && (
+                <p className="mt-3 inline-block rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-black">
+                  {pkg.savings}
+                </p>
+              )}
+              <p className="mt-3 text-sm text-black/75">
+                <span className="font-semibold text-black">Best for:</span> {pkg.bestFor}
               </p>
               <p className="mt-2 text-sm text-black/60">{pkg.description}</p>
               <ul className="mt-6 flex-1 space-y-2.5 text-sm text-black/75">
@@ -60,6 +75,22 @@ export function GraphicPackages() {
               </Button>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-14 border-t border-black/10 pt-10">
+          <h3 className="font-display text-xl font-bold text-black">
+            {eligibleDesigns.heading}
+          </h3>
+          <p className="mt-3 max-w-2xl text-sm text-black/70">{eligibleDesigns.intro}</p>
+          <ul className="mt-6 grid gap-x-8 gap-y-2.5 text-sm text-black/75 sm:grid-cols-2 lg:grid-cols-3">
+            {eligibleDesigns.items.map((item) => (
+              <li key={item} className="flex gap-2.5">
+                <CheckIcon className="mt-0.5 shrink-0 text-gold" width={16} height={16} />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-2xl text-sm text-black/50">{eligibleDesigns.note}</p>
         </div>
       </Section>
 
@@ -91,6 +122,10 @@ export function GraphicPackages() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 border-l-2 border-gold pl-5 text-sm text-black/70">
+          {individualServicesNudge}
+        </p>
       </Section>
 
       <Section bg="light">
@@ -112,15 +147,21 @@ export function GraphicPackages() {
           <div className="space-y-6">
             <div className="border-l-2 border-gold pl-5">
               <h4 className="font-display text-sm font-bold uppercase tracking-wide text-black">
+                Source files & print-ready exports
+              </h4>
+              <p className="mt-2 text-sm text-black/70">{graphicPricingNotes.addOns}</p>
+            </div>
+            <div className="border-l-2 border-gold pl-5">
+              <h4 className="font-display text-sm font-bold uppercase tracking-wide text-black">
                 Revisions
               </h4>
               <p className="mt-2 text-sm text-black/70">{graphicPricingNotes.revisions}</p>
             </div>
             <div className="border-l-2 border-gold pl-5">
               <h4 className="font-display text-sm font-bold uppercase tracking-wide text-black">
-                Need it urgently?
+                Turnaround
               </h4>
-              <p className="mt-2 text-sm text-black/70">{graphicPricingNotes.urgent}</p>
+              <p className="mt-2 text-sm text-black/70">{graphicPricingNotes.turnaround}</p>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Packages & Pricing",
   description:
-    "Clear, upfront pricing from Moshapo Digital Studio — website packages from R1,500 and graphic design packages from R350.",
+    "Clear, upfront pricing from Moshapo Digital Studio — website packages from R1,500, graphic design packages from R350, and individual design services from R150.",
   path: "/packages",
 });
 

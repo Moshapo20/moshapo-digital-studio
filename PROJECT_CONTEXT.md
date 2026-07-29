@@ -49,7 +49,17 @@ remove or weaken that.
 1. **Websites & Digital Experiences** — the primary/lead offer, has fixed
    pricing (`content/packages.ts`, R1,500–R8,500+)
 2. **Brand & Creative** — graphic design, also has fixed pricing
-   (`content/graphicPackages.ts`, R350–R6,500+)
+   (`content/graphicPackages.ts`, packages R350–R6,500+, individual services from
+   R150). The graphic pricing is a deliberate value ladder. Two mechanisms make it
+   hold together, and breaking either one makes the on-page savings claims false:
+   - **Design slots.** Packages draw from the `eligibleDesigns` pool. Most items
+     are one slot; menus and bi-fold brochures count as 2, tri-fold brochures as 3.
+     Without this, Quick Design (R350) would buy a R650 tri-fold brochure at a loss.
+   - **Priced add-ons.** Source files (R150/design) and print-ready exports
+     (R100/design) are paid extras on individual orders and free in every package.
+     The "save from RX" figures are calculated against the *cheapest* eligible
+     combination plus these add-ons, so they are guaranteed minimums. Re-run that
+     arithmetic before changing any package price, slot weighting, or add-on price.
 3. **Technology & Digital Solutions** — future-facing, no fixed pricing,
    "Custom Solutions — Request a Consultation"
 

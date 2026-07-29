@@ -3,6 +3,9 @@ export type GraphicPackage = {
   name: string;
   price: string;
   priceNote?: string;
+  priceSuffix?: string;
+  savings?: string;
+  bestFor: string;
   description: string;
   popular?: boolean;
   features: string[];
@@ -13,55 +16,74 @@ export const graphicPackages: GraphicPackage[] = [
     id: "quick",
     name: "Quick Design",
     price: "R350",
-    description: "For a single, simple design you need done properly.",
+    savings: "Includes R250 of extras that are charged separately on individual orders",
+    bestFor: "One professional marketing asset, needed quickly.",
+    description:
+      "For the campaign that starts on Monday. Pick the design you need, brief us once, and it comes back inside two days — with the working files, so it's yours to reuse.",
     features: [
-      "1 custom graphic design",
-      "Flyer, poster, social post, or promo graphic",
-      "1 round of revisions",
-      "High-resolution final file",
+      "Choose any 1 eligible design",
+      "Source files included",
+      "Print-ready files",
+      "High-resolution exports",
+      "Priority turnaround — 24 to 48 hours",
+      "2 revision rounds",
     ],
   },
   {
     id: "brand-boost",
     name: "Brand Boost",
-    price: "R750",
+    price: "R700",
+    savings: "Save from R500 against ordering the same three individually",
     popular: true,
-    description: "For small businesses that need a few designs at once.",
+    bestFor: "Growing businesses running a campaign or refreshing their marketing.",
+    description:
+      "Three designs, chosen by you, priced as one. The biggest jump in value in the range — and the package most of our clients start with, because it covers a full campaign without committing to a retainer.",
     features: [
-      "3 custom graphic designs",
-      "Social posts, flyers, posters, or banners",
-      "2 rounds of revisions",
-      "High-resolution final files",
-      "Web-ready files",
+      "Choose any 3 eligible designs",
+      "Mix freely — three posts, or a flyer, a poster and a cover",
+      "Source files included",
+      "Print-ready files",
+      "High-resolution exports",
+      "Priority turnaround",
+      "2 revision rounds",
     ],
   },
   {
     id: "business-design",
     name: "Business Design",
-    price: "R1,500",
-    description: "A full set of promotional material for your business.",
+    price: "R1,100",
+    savings: "Save from R900 against ordering the same five individually",
+    bestFor: "Businesses that need a full set of marketing material at once.",
+    description:
+      "Five designs built as a set rather than five separate jobs, so your flyer, your poster and your social posts actually look like they came from the same business. Straight to the front of the queue.",
     features: [
-      "6 custom graphic designs",
-      "Social media designs",
-      "Promotional flyer / poster",
-      "Business banner",
-      "Branded promotional graphics",
-      "2 rounds of revisions",
-      "High-resolution final files",
+      "Choose any 5 eligible designs",
+      "Highest priority queue",
+      "Designed as a matching set",
+      "Source files included",
+      "Print-ready files",
+      "High-resolution exports",
+      "3 revision rounds",
     ],
   },
   {
     id: "content-design",
     name: "Content Design",
-    price: "R2,500",
-    description: "For businesses and creators who post visual content regularly.",
+    price: "R2,300",
+    priceSuffix: "per month",
+    savings: "Save from R2,500 against ordering the same twelve individually",
+    bestFor: "Businesses and creators publishing content every week.",
+    description:
+      "A month of design, planned in advance. We agree what's going out before the month starts, then deliver it in batches so you're never scrambling for something to post. Consistency is the whole point.",
     features: [
-      "12 custom graphic designs",
-      "Social media posts & story designs",
-      "Promotional graphics",
-      "Product / service adverts",
-      "Consistent branded look",
-      "3 rounds of revisions",
+      "Choose any 12 eligible designs per month",
+      "Monthly content planning session",
+      "Priority monthly scheduling",
+      "Delivered in batches across the month",
+      "Source files included",
+      "Print-ready files",
+      "High-resolution exports",
+      "4 revision rounds",
     ],
   },
   {
@@ -69,14 +91,22 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Brand Identity",
     price: "R3,500",
     priceNote: "From",
-    description: "A professional identity for a new or growing business.",
+    savings: "Save from R800 against commissioning each piece individually",
+    bestFor: "New or rebranding businesses that need a proper visual identity.",
+    description:
+      "The point where a business stops looking improvised. A logo, the rules that hold it together, and the everyday pieces you'll actually use — built as one identity instead of assembled from parts that don't quite match.",
     features: [
-      "Professional logo design + variations",
-      "Colour palette & typography",
-      "Brand pattern / graphic elements",
-      "Business card design",
-      "Social media profile + post template",
-      "Basic brand guideline document",
+      "Logo design with full variation set",
+      "Brand guidelines document",
+      "Colour palette and typography system",
+      "Brand pattern and graphic elements",
+      "Double-sided business card design",
+      "Profile picture and Facebook cover",
+      "3 social media post templates",
+      "Source files in all working formats",
+      "High-resolution and print-ready exports",
+      "4 revision rounds",
+      "Project timeline agreed before we start",
     ],
   },
   {
@@ -84,18 +114,48 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Complete Brand System",
     price: "R6,500",
     priceNote: "From",
-    description: "The full professional brand identity system, documented end to end.",
+    savings: "Save from R1,050 against commissioning each piece individually",
+    bestFor: "Established businesses committing to a full brand transformation.",
+    description:
+      "Everything documented, every application built, nothing left to interpretation. This is the version where anyone — a printer, a new hire, another designer — can pick up your brand and apply it correctly without asking you first.",
     features: [
-      "Logo design, variations & usage rules",
-      "Brand colour & typography systems",
-      "Clear-space & incorrect-usage guidelines",
-      "Brand pattern",
-      "Business card, letterhead & invoice template",
-      "Social media templates",
-      "Brand guideline presentation",
+      "Everything in Brand Identity",
+      "Extended logo variation set with usage rules",
+      "Clear-space and incorrect-usage guidelines",
+      "8 social media post templates and 8 story templates",
+      "LinkedIn banner and YouTube banner",
+      "Email signature design",
+      "Tri-fold brochure design",
+      "Source files in all working formats",
+      "High-resolution and print-ready exports",
+      "5 revision rounds",
+      "Project timeline agreed before we start",
     ],
   },
 ];
+
+export const eligibleDesigns = {
+  heading: "Which designs you can choose from",
+  intro:
+    "Quick Design, Brand Boost, Business Design and Content Design all let you pick freely from this list. Most designs take one slot. A few larger pieces take more, because they're genuinely more work.",
+  items: [
+    "Social media post",
+    "Social media story",
+    "Digital flyer",
+    "Promotional poster",
+    "Event poster",
+    "Product advertisement",
+    "Digital marketing graphic",
+    "Facebook cover",
+    "LinkedIn banner",
+    "YouTube banner",
+    "Certificate design",
+    "Menu design — counts as 2",
+    "Brochure, bi-fold — counts as 2",
+    "Brochure, tri-fold — counts as 3",
+  ],
+  note: "Quick Design covers single-slot designs, so menus and brochures come in from Brand Boost upwards. Business cards, profile pictures, thumbnails, email signatures, logo design and brand guidelines stay standalone services — they aren't part of the package selection.",
+};
 
 export type IndividualServiceGroup = {
   category: string;
@@ -104,70 +164,50 @@ export type IndividualServiceGroup = {
 
 export const individualServices: IndividualServiceGroup[] = [
   {
-    category: "Logo & Branding",
-    items: [
-      { name: "Logo Design", price: "From R800" },
-      { name: "Logo Redesign", price: "From R600" },
-      { name: "Logo + Basic Brand Kit", price: "From R1,500" },
-      { name: "Complete Brand Identity", price: "From R3,500" },
-      { name: "Brand Guideline Document", price: "From R1,500" },
-    ],
-  },
-  {
-    category: "Social Media Design",
+    category: "Marketing & Promotional Graphics",
     items: [
       { name: "Social Media Post", price: "From R150" },
       { name: "Social Media Story", price: "From R150" },
-      { name: "Profile Picture", price: "From R250" },
-      { name: "Cover / Banner", price: "From R300" },
-      { name: "YouTube Banner", price: "From R400" },
-      { name: "Social Media Template", price: "From R350" },
-    ],
-  },
-  {
-    category: "Marketing Design",
-    items: [
-      { name: "Digital Flyer", price: "From R250" },
-      { name: "Promotional Poster", price: "From R300" },
-      { name: "Event Poster", price: "From R300" },
+      { name: "Digital Flyer", price: "From R200" },
+      { name: "Promotional Poster", price: "From R200" },
+      { name: "Event Poster", price: "From R250" },
       { name: "Product Advertisement", price: "From R300" },
       { name: "Digital Marketing Graphic", price: "From R250" },
+      { name: "Facebook Cover", price: "From R250" },
+      { name: "LinkedIn Banner", price: "From R250" },
+      { name: "YouTube Banner", price: "From R250" },
+      { name: "Certificate Design", price: "From R250" },
+      { name: "Menu Design", price: "From R350" },
+      { name: "Brochure (Bi-fold)", price: "From R500" },
+      { name: "Brochure (Tri-fold)", price: "From R650" },
     ],
   },
   {
-    category: "Business Materials",
+    category: "Business Essentials",
     items: [
-      { name: "Business Card", price: "From R300" },
-      { name: "Letterhead", price: "From R300" },
-      { name: "Invoice Template", price: "From R400" },
-      { name: "Quotation Template", price: "From R400" },
-      { name: "Certificate", price: "From R250" },
-      { name: "Company Profile", price: "From R1,500" },
-      { name: "Business Presentation", price: "From R500" },
+      { name: "Business Card (Single-Sided)", price: "From R200" },
+      { name: "Business Card (Double-Sided)", price: "From R250" },
+      { name: "Email Signature", price: "From R150" },
     ],
   },
   {
-    category: "Print & Large Format",
+    category: "Branding",
     items: [
-      { name: "Banner Design", price: "From R400" },
-      { name: "Pull-Up Banner", price: "From R500" },
-      { name: "Signage Design", price: "From R500" },
-      { name: "Brochure Design", price: "From R600" },
-      { name: "Menu Design", price: "From R500" },
-      { name: "Catalogue Design", price: "From R1,000" },
+      { name: "Logo Design", price: "From R1,200" },
+      { name: "Brand Guidelines", price: "From R2,000" },
     ],
   },
   {
-    category: "Content Creator Design",
+    category: "Other Services",
     items: [
-      { name: "YouTube Thumbnail", price: "From R200" },
-      { name: "Podcast Cover", price: "From R350" },
-      { name: "YouTube Channel Branding", price: "From R750" },
-      { name: "Thumbnail Package (5)", price: "From R750" },
-      { name: "Thumbnail Package (10)", price: "From R1,300" },
+      { name: "Profile Picture", price: "From R150" },
+      { name: "YouTube Thumbnail", price: "From R180" },
     ],
   },
 ];
+
+export const individualServicesNudge =
+  "Need more than one design? Every package below costs less than ordering the same pieces individually — Brand Boost is where most businesses start.";
 
 export const graphicPricingNotes = {
   complexityHeading: "What affects the final price",
@@ -181,7 +221,10 @@ export const graphicPricingNotes = {
     "Number of revisions",
     "Whether custom illustrations are needed",
   ],
+  addOns:
+    "Individual orders come back as high-resolution digital files. Editable source files are R150 per design and print-ready exports are R100 per design. Both are included free in every package — that is where most of the package saving comes from.",
   revisions:
-    "Package prices include the revisions listed in each package. Extra revision rounds are from R100. A major redesign is quoted separately.",
-  urgent: "Need it faster? 24-hour delivery adds 50%, same-day adds 100%.",
+    "Individual orders include one revision round. Each package includes the rounds listed on it. Additional revisions are available for an extra fee, quoted with your project.",
+  turnaround:
+    "Individual orders run on standard turnaround. Quick Design comes back in 24 to 48 hours. Brand Boost moves ahead of standard orders and Business Design goes to the front of the queue. Content Design runs on a scheduled monthly slot, and the two brand packages work to a project timeline agreed before we start.",
 };
