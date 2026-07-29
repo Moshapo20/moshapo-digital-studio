@@ -4,6 +4,11 @@ export type GraphicPackage = {
   price: string;
   priceNote?: string;
   priceSuffix?: string;
+  // Only the fixed-count graphic packages publish a savings figure. Brand
+  // Identity and Complete Brand System deliberately omit it: they are "From"
+  // priced bespoke work, so a like-for-like comparison against a fixed basket
+  // is misleading, and quoting one made Brand Identity's saving read as
+  // smaller than Brand Boost's. They sell on scope instead.
   savings?: string;
   bestFor: string;
   description: string;
@@ -91,7 +96,6 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Brand Identity",
     price: "R3,500",
     priceNote: "From",
-    savings: "Save from R400 against commissioning each piece individually",
     bestFor: "New or rebranding businesses that need a proper visual identity.",
     description:
       "The point where a business stops looking improvised. A logo, the rules that hold it together, and the everyday pieces you'll actually use — built as one identity instead of assembled from parts that don't quite match.",
@@ -114,7 +118,6 @@ export const graphicPackages: GraphicPackage[] = [
     name: "Complete Brand System",
     price: "R6,500",
     priceNote: "From",
-    savings: "Save from R650 against commissioning each piece individually",
     bestFor: "Established businesses committing to a full brand transformation.",
     description:
       "Everything documented, every application built, nothing left to interpretation. This is the version where anyone — a printer, a new hire, another designer — can pick up your brand and apply it correctly without asking you first.",
